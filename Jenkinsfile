@@ -1,13 +1,16 @@
 pipeline {
   agent any
+  environment {
+    PATH="C:/Program Files (x86)/apache-maven-3.6.0/bin;%PATH%"
+  }
   stages {
 
     stage('unit test') {
       steps {
-        withEnv(["PATH+EXTRA=C:/Program Files (x86)/apache-maven-3.6.0/bin"]) {
+       
           sh 'mvn clean test'
         }
-      }
+   
     }
 
     stage('integration test') {
