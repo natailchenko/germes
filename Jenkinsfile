@@ -4,7 +4,7 @@ pipeline {
 
     stage('unit test') {
       steps {
-        withEnv(["PATH+EXTRA=C:\Program Files (x86)\apache-maven-3.6.0\bin"]) {
+        withEnv(["PATH+EXTRA=C:/Program Files (x86)/apache-maven-3.6.0/bin"]) {
           sh 'mvn clean test'
         }
       }
